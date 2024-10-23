@@ -7,13 +7,55 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <EditText
+        android:id="@+id/et_original2"
+        android:layout_width="351dp"
+        android:layout_height="147dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="368dp"
+        android:layout_marginEnd="20dp"
+        android:ems="10"
+        android:hint="Entrez le texte à crypter ou décrypter"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/bt_crypter"
+        android:layout_width="135dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="40dp"
+        android:text="CRYPTER"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/bt_decrypter"
+        app:layout_constraintTop_toBottomOf="@+id/et_original" />
+
+    <EditText
+        android:id="@+id/et_original"
+        android:layout_width="351dp"
+        android:layout_height="147dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="34dp"
+        android:layout_marginEnd="20dp"
+        android:ems="10"
+        android:inputType="text"
+        android:hint="Entrez le texte à crypter ou décrypter"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/bt_decrypter"
+        android:layout_width="135dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="40dp"
+        android:text="DECRYPTER"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_original" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
