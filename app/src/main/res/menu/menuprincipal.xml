@@ -1,3 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android"/>
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+<item
+    android:id="@+id/mnu_ouvrir"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:icon="@android:drawable/ic_menu_upload"
+    android:title="@string/open"
+    app:showAsAction="ifRoom" />
+
+
+    <item
+        android:id="@+id/mnu_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:icon="@android:drawable/ic_menu_save"
+        android:title="@string/save"
+        app:showAsAction="ifRoom" />
+</menu>
