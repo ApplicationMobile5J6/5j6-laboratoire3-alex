@@ -5,5 +5,9 @@
     <string name="options">Options</string>
     <string name="cl_de_d_calage">Clé de décalage</string>
     <string name="quitter">Quitter</string>
+    <string name="texte_recevoir">Texte à recevoir</string>
+    <string name="texte_crypter">Entrez le texte à crypter ou décrypter</string>
+    <string name="btn_crypter">CRYPTER</string>
+    <string name="btn_decrypter">DECRYPTER</string>
 
 </resources>

@@ -8,7 +8,7 @@
     android:layout_height="wrap_content"
     android:icon="@android:drawable/ic_menu_upload"
     android:title="@string/open"
-    app:showAsAction="always" />
+    app:showAsAction="ifRoom" />
 
 
     <item
@@ -17,28 +17,27 @@
         android:layout_height="wrap_content"
         android:icon="@android:drawable/ic_menu_save"
         android:title="@string/save"
-        app:showAsAction="always" />
+        app:showAsAction="ifRoom" />
 
     <item
-        android:id="@+id/mnu_cle"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orderInCategory="101"
         android:icon="@android:drawable/ic_menu_more"
         android:title="@string/options"
-        app:showAsAction="always" >
+        app:showAsAction="ifRoom" >
         <menu>
 
-            <item android:id="@+id/action_settings"
+            <item
+                android:id="@+id/mnu_cle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
                 android:title="@string/cl_de_d_calage" />
 
-            <item android:id="@+id/action_help"
+            <item android:id="@+id/mnu_quit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
                 android:title="@string/quitter" />
 
         </menu>

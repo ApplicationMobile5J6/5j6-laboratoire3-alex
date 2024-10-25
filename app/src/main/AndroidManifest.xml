@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Labo3AlexSoliman"
         tools:targetApi="31">
         <activity
+            android:name=".CleDecalage"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
