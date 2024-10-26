@@ -21,31 +21,42 @@ public class CleDecalage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(this);
+        setContentView(R.layout.activity_cle_decalage);
+
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
         btn_valider = findViewById(R.id.btn_valider);
         et_cle = findViewById(R.id.et_cle);
-        btn_valider.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        btn_valider.setOnClickListener( v -> {
 
             int cle = Integer.parseInt(et_cle.getText().toString());
             if (cle >= 0 && cle <= 25 ) {
                 Intent intent = new Intent();
                 intent.putExtra("cle", cle);
                 setResult(2, intent);
+                finish();
             }
             else {
                 Toast.makeText(getBaseContext(), "Cle Invalide", Toast.LENGTH_SHORT).show();
             }
-            }
-        });
 
-        EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_cle_decalage);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
         });
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString("etCleText", et_cle.getText().toString());
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        et_cle.setText(savedInstanceState.getString("etCleText"));
     }
 
 

@@ -38,6 +38,18 @@ public class MainActivity extends AppCompatActivity {
         Toolbar tb_action = (Toolbar) findViewById(R.id.tb_action);
         et_origin = findViewById(R.id.et_original);
         et_recevoir = findViewById(R.id.et_recevoir);
+        btn_crypter = findViewById(R.id.bt_crypter);
+        btn_decrypter = findViewById(R.id.bt_decrypter);
+        btn_crypter.setOnClickListener(v -> {
+          String text_original = et_origin.getText().toString();
+          String texte_crypte = crypterTexte(text_original, cle);
+          et_recevoir.setText(texte_crypte);
+        });
+        btn_decrypter.setOnClickListener(v -> {
+            String texte_original = et_origin.getText().toString();
+            String texte_decrypte= decrypterTexte(texte_original, cle);
+            et_recevoir.setText(texte_decrypte);
+        });
         setSupportActionBar(tb_action);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -117,6 +129,39 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+
+    private String crypterTexte(String texte, int cle){
+        StringBuilder texte_crypter = new StringBuilder();
+        for (char c : texte.toCharArray()) {
+            if (Character.isLetter(c)) {
+                char base = Character.isLowerCase(c) ? 'a' : 'A';
+                c = (char) ((c - base + cle) % 26 + base);
+            }
+            texte_crypter.append(c);
+        }
+        return texte_crypter.toString();
+    }
+
+    private String decrypterTexte(String texte, int cle){
+        return crypterTexte(texte, 26 - cle);
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString("etOriginText", et_origin.getText().toString());
+        outState.putString("etRecevoirText", et_recevoir.getText().toString());
+        outState.putInt("cle", cle);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        et_origin.setText(savedInstanceState.getString("etOriginText"));
+        et_recevoir.setText(savedInstanceState.getString("etRecevoirText"));
+        cle = savedInstanceState.getInt("cle");
+    }
+
 
 
 
