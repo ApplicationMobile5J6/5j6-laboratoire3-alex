@@ -17,11 +17,12 @@ import androidx.core.view.WindowInsetsCompat;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
 
-    private String fichier = "nomFichier";
+    private String fichier = "monFichier.txt";
     EditText et_origin, et_recevoir;
     Button btn_crypter, btn_decrypter;
     String data;
@@ -74,6 +75,18 @@ public class MainActivity extends AppCompatActivity {
             }
 
         } else if (item.getItemId() == R.id.mnu_save){
+            data = et_recevoir.getText().toString();
+
+            try{
+                FileOutputStream fichierOut = openFileOutput(fichier, MODE_PRIVATE);
+                fichierOut.write(data.getBytes());
+                fichierOut.close();
+                Toast.makeText(getBaseContext(), "fichier sauvegarde", Toast.LENGTH_SHORT).show();
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (IOException e){
+                e.printStackTrace();
+            }
 
         } else if (item.getItemId() == R.id.mnu_cle){
 

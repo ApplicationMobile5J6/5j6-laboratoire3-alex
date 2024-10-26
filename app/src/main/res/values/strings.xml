@@ -9,5 +9,6 @@
     <string name="texte_crypter">Entrez le texte à crypter ou décrypter</string>
     <string name="btn_crypter">CRYPTER</string>
     <string name="btn_decrypter">DECRYPTER</string>
+    <string name="tv_cle">Entrez la clé de décalage entre 0 et 25</string>
 
 </resources>
