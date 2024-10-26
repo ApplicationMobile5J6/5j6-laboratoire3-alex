@@ -1,0 +1,67 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tb_action"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:background="?attr/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/et_original"
+        android:layout_width="358dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="@string/texte_crypter"
+        android:inputType="text"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.407"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tb_action" />
+
+    <EditText
+        android:id="@+id/et_recevoir"
+        android:layout_width="366dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:hint="@string/texte_recevoir"
+        android:inputType="text"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.394"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bt_crypter" />
+
+    <Button
+        android:id="@+id/bt_crypter"
+        android:layout_width="140dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="36dp"
+        android:text="@string/btn_crypter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.238"
+        app:layout_constraintStart_toEndOf="@+id/bt_decrypter"
+        app:layout_constraintTop_toBottomOf="@+id/et_original" />
+
+    <Button
+        android:id="@+id/bt_decrypter"
+        android:layout_width="147dp"
+        android:layout_height="66dp"
+        android:layout_marginStart="152dp"
+        android:layout_marginTop="36dp"
+        android:text="@string/btn_decrypter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_original" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
