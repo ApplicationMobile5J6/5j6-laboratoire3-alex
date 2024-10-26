@@ -10,5 +10,7 @@
     <string name="btn_crypter">CRYPTER</string>
     <string name="btn_decrypter">DECRYPTER</string>
     <string name="tv_cle">Entrez la clé de décalage entre 0 et 25</string>
+    <string name="default_value">0</string>
+    <string name="valider">Valider la clé</string>
 
 </resources>
